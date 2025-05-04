@@ -124,7 +124,7 @@ const connectionOptions = {
     logger: pino({ level: 'silent' }),
     printQRInTerminal: opcion === '1' || methodCodeQR,
     mobile: MethodMobile,
-    browser: opcion === '1' ? ['Senna', 'Safari', '2.0.0'] : methodCodeQR ? ['Senna', 'Safari', '2.0.0'] : ['Ubuntu', 'Chrome', '20.0.04'],
+    browser: opcion === '1' ? ['kenn', 'Safari', '2.0.0'] : methodCodeQR ? ['kenn', 'Safari', '2.0.0'] : ['Ubuntu', 'Chrome', '20.0.04'],
     auth: {
         creds: state.creds,
         keys: makeCacheableSignalKeyStore(state.keys, pino({ level: 'fatal' }).child({ level: 'fatal' })),
