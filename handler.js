@@ -165,7 +165,7 @@ export async function handler(chatUpdate) {
                     delete: false,
                     antiLink: false,
                     viewonce: false,
-                    useDocument: true,
+                    useDocument: false,
                     captcha: false,
                     antiBotClone: false,
                     nsfw: false, 
@@ -521,8 +521,8 @@ export async function participantsUpdate({ id, participants, action }) {
             if (chat.welcome) {
                 let groupMetadata = await this.groupMetadata(id) || (conn.chats[id] || {}).metadata
                 for (let user of participants) {
-                    let pp = 'https://i.ibb.co/1ZxrXKJ/avatar-contact.jpg'
-                    let ppgp = 'https://i.ibb.co/1ZxrXKJ/avatar-contact.jpg'
+                    let pp = 'https://qu.ax/ZfbVn.jpg'
+                    let ppgp = 'https://qu.ax/ZfbVn.jpg'
                     try {
                         pp = await this.profilePictureUrl(user, 'image')
                         ppgp = await this.profilePictureUrl(id, 'image')
@@ -536,7 +536,7 @@ export async function participantsUpdate({ id, participants, action }) {
                                 groupicon: ppgp,
                                 membercount: groupMetadata.participants.length,
                                 profile: pp,
-                                background: 'https://i.ibb.co/fkFmQC2/eve.jpg'
+                                background: 'https://qu.ax/ZfbVn.jpg'
                             }, 'apikey')
 
                             let lea = API('fgmods', '/api/goodbye2', {
@@ -545,7 +545,7 @@ export async function participantsUpdate({ id, participants, action }) {
                                 groupicon: ppgp,
                                 membercount: groupMetadata.participants.length,
                                 profile: pp,
-                                background: 'https://i.ibb.co/jh9367t/akali.jpg'
+                                background: 'https://qu.ax/ZfbVn.jpg'
                             }, 'apikey')
 
                             this.sendFile(id, action === 'add' ? wel : lea, 'pp.jpg', text, null, false, { mentions: [user] })
@@ -561,7 +561,7 @@ export async function participantsUpdate({ id, participants, action }) {
         case 'promote':
             text = (chat.sPromote || this.spromote || conn.spromote || '@user ahora es administrador')
         case 'demote':
-            let pp = await this.profilePictureUrl(participants[0], 'image').catch(_ => 'https://i.ibb.co/1ZxrXKJ/avatar-contact.jpg') 
+            let pp = await this.profilePictureUrl(participants[0], 'image').catch(_ => 'https://qu.ax/ZfbVn.jpg') 
             if (!text)
                 text = (chat.sDemote || this.sdemote || conn.sdemote || '@user ya no es administrador')
             text = text.replace('@user', '@' + participants[0].split('@')[0])
