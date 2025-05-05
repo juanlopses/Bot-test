@@ -1,4 +1,4 @@
-/**import axios from 'axios'
+/*import axios from 'axios'
 import * as cheerio from 'cheerio'
 
 
@@ -22,4 +22,4 @@ handler.tags = ['tools']
 handler.command = ['wiki','wikipedia'] 
 
 
-export default handler
+export default handler*/
